@@ -11,7 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eezle" target="1.5" />
-      <module name="security" target="1.5" />
+      <module name="security" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

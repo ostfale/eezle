@@ -1,5 +1,6 @@
-package de.ostfale.security;
+package de.ostfale.security.xml.digitalSignature;
 
+import de.ostfale.security.CryptoUtil;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
