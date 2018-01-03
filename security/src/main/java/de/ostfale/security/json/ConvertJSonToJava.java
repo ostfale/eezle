@@ -49,12 +49,14 @@ public class ConvertJSonToJava {
         Map<String, Object> config = new HashMap<>();
         config.put(JsonGenerator.PRETTY_PRINTING, true);
         JsonBuilderFactory jsonBuilderFactory = Json.createBuilderFactory(config);
-        return jsonBuilderFactory.createObjectBuilder()
+        JsonObject jsonObject = jsonBuilderFactory.createObjectBuilder()
                 .add("name", "Ronaldo")
                 .add("sport", "soccer")
                 .add("age", 25)
                 .add("id", 125)
                 .add("lastScores", jsonBuilderFactory.createArrayBuilder().add(2).add(1).add(3).add(5).add(0))
                 .build();
+        System.out.println(jsonObject);
+        return jsonObject;
     }
 }

@@ -13,6 +13,7 @@ import java.security.spec.X509EncodedKeySpec;
 public class CryptoUtil {
 
     public static final String ALG_SHA1 = "SHA-1";
+    public static final String ALG_SHA256 = "SHA-256";
     public static final String CHAR_SET = "UTF-8";
     public static final String ALGORITHM = "RSA";
     public static final Integer KEY_LENGTH = 1024;
