@@ -1,4 +1,4 @@
-package de.ostfale.fp.lambda.basic.de.ostfale.fp.lambda.collection;
+package de.ostfale.fp.lambda.collection;
 
 import java.util.Arrays;
 import java.util.List;
