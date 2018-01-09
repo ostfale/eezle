@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/eezle.iml" filepath="$PROJECT_DIR$/eezle.iml" />
       <module fileurl="file://$PROJECT_DIR$/lambdastream/lambdastream.iml" filepath="$PROJECT_DIR$/lambdastream/lambdastream.iml" />
       <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webservice/webservice.iml" filepath="$PROJECT_DIR$/webservice/webservice.iml" />
     </modules>
   </component>
 </project>
