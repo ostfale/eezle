@@ -9,13 +9,13 @@ import java.util.stream.Collectors;
  * Show use of filter operation
  * Created by Uwe Sauerbrei on 07.01.2018
  */
-public class FilterList {
+public class AFilterList {
 
     final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
     List<String> startsWithN = new ArrayList<>();
 
     public static void main(String[] args) {
-        new FilterList().doIt();
+        new AFilterList().doIt();
     }
 
     private void doIt() {

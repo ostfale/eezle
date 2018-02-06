@@ -10,9 +10,9 @@ import java.util.function.Predicate;
  * are final of effectively final (must not be changed to avoid race condition) in the enclosing scope.
  * Created by Uwe Sauerbrei on 07.01.2018
  */
-public class ReusingLambdas {
+public class BReusingLambdas {
 
-    private final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
+        private final List<String> friends = Arrays.asList("Brian", "Nate", "Neal", "Raju", "Sara", "Scott");
     private final List<String> editors = Arrays.asList("Jackie", "John", "Mike");
     private final List<String> comrades = Arrays.asList("Kate", "Ken", "Nick", "Paula", "Zach");
 
@@ -47,7 +47,7 @@ public class ReusingLambdas {
 
 
     public static void main(String[] args) {
-        new ReusingLambdas().doIt();
+        new BReusingLambdas().doIt();
     }
 
     private void doIt() {
