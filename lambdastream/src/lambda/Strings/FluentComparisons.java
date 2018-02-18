@@ -20,13 +20,22 @@ public class FluentComparisons {
     );
 
     private final Function<Person, String> byName = person -> person.getName();
+    private final Function<Person, Integer> byAge = person -> person.getAge();
 
     public static void main(String[] args) {
         new FluentComparisons().doIt();
     }
 
     private void doIt() {
+        sortByAgeAndName();
         sortPeopleComparingNames();
+    }
+
+    private void sortByAgeAndName() {
+        printPeople("Sorted in ascending order by age and name",
+                people.stream()
+                        .sorted(comparing(byAge).thenComparing(byName))
+                        .collect(toList()));
     }
 
     private void sortPeopleComparingNames() {
