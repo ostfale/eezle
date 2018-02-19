@@ -21,6 +21,8 @@ public class FluentComparisons {
 
     private final Function<Person, String> byName = person -> person.getName();
     private final Function<Person, Integer> byAge = person -> person.getAge();
+    private final Function<Person, Integer> byAgeMRef = Person::getAge;
+    private final Function<Person, String> byNameMRef = Person::getName;
 
     public static void main(String[] args) {
         new FluentComparisons().doIt();
@@ -34,7 +36,7 @@ public class FluentComparisons {
     private void sortByAgeAndName() {
         printPeople("Sorted in ascending order by age and name",
                 people.stream()
-                        .sorted(comparing(byAge).thenComparing(byName))
+                        .sorted(comparing(byAgeMRef).thenComparing(byNameMRef))
                         .collect(toList()));
     }
 
