@@ -18,12 +18,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lambdastream" />
         <module name="security" />
         <module name="webservice" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="eezle" target="1.5" />
+      <module name="lambdastream" target="1.8" />
       <module name="security" target="1.8" />
       <module name="webservice" target="1.8" />
     </bytecodeTargetLevel>
