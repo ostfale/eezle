@@ -5,3 +5,6 @@ out/*
 base/target/*
 security/target/*
 webservice/target/*
+/.idea/compiler.xml
+/security/security.iml
+/.idea/modules.xml
