@@ -11,6 +11,7 @@
     <modules>
         <module>security</module>
         <module>webservice</module>
+        <module>base</module>
     </modules>
     <dependencies>
         <dependency>

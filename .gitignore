@@ -2,3 +2,6 @@
 .idea/libraries/*.xml
 *.class
 out/*
+base/target/*
+security/target/*
+webservice/target/*
