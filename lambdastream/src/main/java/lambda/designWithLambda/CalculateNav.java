@@ -1,9 +1,10 @@
-package designWithLambda;
+package lambda.designWithLambda;
 
 import java.math.BigDecimal;
 import java.util.function.Function;
 
 /**
+ * Delegate responsibility to lambda
  * Created by Uwe Sauerbrei on 25.02.2018
  */
 public class CalculateNav {

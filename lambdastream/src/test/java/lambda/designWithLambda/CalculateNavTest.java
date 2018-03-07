@@ -1,4 +1,4 @@
-package designWithLambda;
+package lambda.designWithLambda;
 
 import org.junit.Test;
 

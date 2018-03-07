@@ -1,4 +1,4 @@
-package designWithLambda;
+package lambda.designWithLambda;
 
 import java.util.List;
 import java.util.function.Predicate;
