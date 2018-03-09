@@ -9,3 +9,4 @@ webservice/target/*
 /security/security.iml
 /.idea/modules.xml
 .idea/sonarlint/*
+*.iml
