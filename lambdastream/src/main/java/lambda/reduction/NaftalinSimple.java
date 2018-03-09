@@ -1,6 +1,8 @@
 package lambda.reduction;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.OptionalInt;
 
 /**
@@ -16,13 +18,37 @@ public class NaftalinSimple {
 	}
 
 	private void doIt() {
-		sumByReduction();
+		reductionOverAnIdentity();
+		reductionOnImmutabeRefTypes();
+		reductionOnPrimitives();
 	}
 
-	private void sumByReduction() {
+	/**
+	 * Doesn't return an Optional, since it will, even with an empty stream, return a value (ZERO)
+	 */
+	private void reductionOverAnIdentity() {
+		BigDecimal[] vals = new BigDecimal[100];
+		Arrays.setAll(vals, BigDecimal::new);
+
+		BigDecimal sum = Arrays.stream(vals)
+				.reduce(BigDecimal.ZERO, BigDecimal::add);
+		System.out.println("Sum by object reduction with base value: " + sum);
+	}
+
+	private void reductionOnImmutabeRefTypes() {
+		BigDecimal[] vals = new BigDecimal[100];
+		Arrays.setAll(vals, BigDecimal::new);
+
+		Optional<BigDecimal> sum = Arrays.stream(vals)
+				.reduce(BigDecimal::add);
+		System.out.println("Sum by object reduction: " + sum.get());
+
+	}
+
+	private void reductionOnPrimitives() {
 		int[] vals = new int[100];
 		Arrays.setAll(vals, i -> i);
 		OptionalInt sum = Arrays.stream(vals).reduce((a, b) -> a + b);
-		System.out.println("Sum by reduction: " + sum.getAsInt());
+		System.out.println("Sum by primitiv reduction: " + sum.getAsInt());
 	}
 }
