@@ -3,23 +3,23 @@ package lambda.designWithLambda;
 /**
  * Created by Uwe Sauerbrei on 25.02.2018
  */
-public class Asset {
+class Asset {
 
     public enum AssetType {BOND, STOCK}
 
     private final AssetType type;
     private final int value;
 
-    public Asset(AssetType type, int value) {
+    Asset(AssetType type, int value) {
         this.type = type;
         this.value = value;
     }
 
-    public AssetType getType() {
+    AssetType getType() {
         return type;
     }
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
