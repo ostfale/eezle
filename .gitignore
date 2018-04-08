@@ -10,3 +10,4 @@ webservice/target/*
 /.idea/modules.xml
 .idea/sonarlint/*
 *.iml
+/.idea/misc.xml
