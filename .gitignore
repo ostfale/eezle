@@ -11,3 +11,4 @@ webservice/target/*
 .idea/sonarlint/*
 *.iml
 /.idea/misc.xml
+j8/target/*
