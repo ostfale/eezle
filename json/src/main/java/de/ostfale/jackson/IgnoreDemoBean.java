@@ -10,9 +10,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class IgnoreDemoBean {
 
     @JsonIgnore
-    public long personId = 0;
+    private long personId = 0;
 
-    public String name = "James Clark";
+    private String name = "James Clark";
 
     @Override
     public String toString() {
@@ -20,5 +20,21 @@ public class IgnoreDemoBean {
                 "personId=" + personId +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public long getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(long personId) {
+        this.personId = personId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
