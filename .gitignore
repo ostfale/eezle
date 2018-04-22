@@ -12,3 +12,4 @@ webservice/target/*
 *.iml
 /.idea/misc.xml
 j8/target/*
+json/target/*

@@ -13,6 +13,7 @@
         <module>webservice</module>
         <module>base</module>
         <module>j8</module>
+        <module>json</module>
     </modules>
 
     <properties>
