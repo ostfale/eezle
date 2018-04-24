@@ -14,6 +14,7 @@
         <module>base</module>
         <module>j8</module>
         <module>json</module>
+        <module>testfw</module>
     </modules>
 
     <properties>
