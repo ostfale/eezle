@@ -1,9 +1,6 @@
 package de.ostfale.testng.base;
 
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
 /**
  * Test base class
@@ -15,21 +12,32 @@ public class BaseTestSuite {
 
 	@BeforeClass
 	public void beforeClass() {
-		System.out.println("\nBaseTestSuite -> before class");
+		System.out.println("BaseTestSuite -> before class");
 	}
 
 	@AfterClass
 	public void afterClass() {
-		System.out.println("\nBaseTestSuite -> after class");
+		System.out.println("BaseTestSuite -> after class");
 	}
+
+	@BeforeTest
+	public void beforeTest() {
+		System.out.println("BaseTestSuite -> before test");
+	}
+
+	@AfterTest
+	public void afterTest() {
+		System.out.println("BaseTestSuite -> after test");
+	}
+
 
 	@BeforeSuite
 	public void beforeSuite() {
-		System.out.println("\nBaseTestSuite -> before suite");
+		System.out.println("BaseTestSuite -> before suite");
 	}
 
 	@AfterSuite
 	public void afterSuite() {
-		System.out.println("\nBaseTestSuite -> after suite");
+		System.out.println("BaseTestSuite -> after suite");
 	}
 }

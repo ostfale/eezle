@@ -1,8 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Regression TestSuite">
-    <test name="Application Test">
+<suite name="Complete TestSuite">
+    <test name="Smoke Test">
         <classes>
             <class name="de.ostfale.testng.regressionsuite.TestNG_TestClass1"></class>
+        </classes>
+    </test>
+    <test name="Regression Test">
+        <classes>
             <class name="de.ostfale.testng.regressionsuite.TestNG_TestClass2"></class>
         </classes>
     </test>
