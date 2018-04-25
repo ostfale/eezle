@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static de.ostfale.stream.domain.Topic.COMPUTING;
-
 /**
  * Initialize some books in library
  * Created : 24.04.2018
