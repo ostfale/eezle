@@ -1,6 +1,7 @@
 package de.ostfale.stream.domain;
 
 import java.time.Year;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -25,6 +26,18 @@ public class Book {
 		this.topic = topic;
 		this.pubDate = pubDate;
 		this.height = height;
+	}
+
+	@Override
+	public String toString() {
+		return "Book{" +
+				"title='" + title + '\'' +
+				", authors=" + authors +
+				", pageCounts=" + Arrays.toString(pageCounts) +
+				", topic=" + topic +
+				", pubDate=" + pubDate +
+				", height=" + height +
+				'}';
 	}
 
 	public String getTitle() {
