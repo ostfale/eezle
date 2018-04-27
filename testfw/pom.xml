@@ -10,6 +10,25 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>testfw</artifactId>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.20.1</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng-groups.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng-parameters.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng-preserve-enable.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng-regression-suite.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng-regression-test.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.testng</groupId>

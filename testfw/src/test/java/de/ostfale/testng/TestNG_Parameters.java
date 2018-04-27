@@ -20,7 +20,7 @@ public class TestNG_Parameters {
 		System.out.println("2. Parameter value from xml file: " + platform);
 	}
 
-	@Test
+	@Test (enabled = false)
 	@Parameters({"response"})
 	public void testMethod1(String response) throws InterruptedException {
 		String[] stringArray = response.split(",");
