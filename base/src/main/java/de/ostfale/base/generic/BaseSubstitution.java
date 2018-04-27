@@ -24,6 +24,6 @@ public class BaseSubstitution {
         List<Number> nums = new ArrayList<>();
         nums.add(2);
         nums.add(3.14);
-        assert nums.toString().equals(("[2,3.14]"));
+        assert nums.toString().equals("[2, 3.14]");
     }
 }
