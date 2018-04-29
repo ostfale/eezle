@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Use extend wildcard when you only get values and super if you put values. To put values and get values into the same structure,
  * avoid super and extend. Subtyping relation is invariant meaning List <Integer> is not considered to be a subtype of List<Number>
- * Wildcards introduce contravariant subtyping for generics. 
+ * Wildcards introduce contravariant subtyping for generics.
  * * Created by Uwe Sauerbrei on 27.04.2018
  */
 public class PutGetPrinciple {
