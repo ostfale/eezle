@@ -5,6 +5,12 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * Wildcards may not appear: <br>
+ *     <ul>
+ *         <li>At the top level of class instance creation (new ArrayList<?>();)</li>
+ *         <li>In explicit type parameters in generic method calls</li>
+ *         <li>In supertypes (extends and implements)</li>
+ *     </ul>
  * Created by Uwe Sauerbrei on 29.04.2018
  */
 public class WildcardCapture {
