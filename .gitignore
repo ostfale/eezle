@@ -16,3 +16,4 @@ json/target/*
 /testfw/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 /.idea/encodings.xml
 testfw/target/*
+testfw/test-output/*
