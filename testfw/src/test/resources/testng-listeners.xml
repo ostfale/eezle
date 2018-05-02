@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Listeners TestSuite">
+    <listeners>
+        <listener class-name="de.ostfale.testng.listener.CustomListener3"></listener>
+    </listeners>
     <test name="Application Test 1">
         <classes>
             <class name="de.ostfale.testng.listener.TestNG_ListenersTest1"></class>
