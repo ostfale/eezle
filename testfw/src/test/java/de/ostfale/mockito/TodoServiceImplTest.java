@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -29,6 +30,23 @@ class TodoServiceImplTest {
 
 		TodoServiceImpl service = new TodoServiceImpl(mockTodoService);
 		List<String> filteredTodos = service.retrieveTodosRelatedToSpring("Dummy");
+		assertEquals(2, filteredTodos.size());
+	}
+
+
+	@Test
+	void test_RetrieveTodosUsingMockBDD_Style() {
+
+		//Given
+		List<String> allTodos = Arrays.asList("Learn Spring MVC", "Learn Spring", "Learn Whistle");
+		TodoService mockTodoService = mock(TodoService.class);
+		given(mockTodoService.retrieveTodos("Dummy")).willReturn(allTodos);
+		TodoServiceImpl service = new TodoServiceImpl(mockTodoService);
+
+		//When
+		List<String> filteredTodos = service.retrieveTodosRelatedToSpring("Dummy");
+
+		//Then
 		assertEquals(2, filteredTodos.size());
 	}
 }

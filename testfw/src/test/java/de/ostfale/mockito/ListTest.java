@@ -28,6 +28,9 @@ public class ListTest {
 		listMock = mock(List.class);
 	}
 
+
+
+
 	@Test
 	@DisplayName("mock return test")
 	void test_mockListSizeMethod() {
