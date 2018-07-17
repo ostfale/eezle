@@ -3,8 +3,12 @@ package de.ostfale.base.datetime;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
+import java.util.Arrays;
+import java.util.Locale;
 
 /**
  * Formatting examples
@@ -23,6 +27,8 @@ public class FormattingDateTime {
 		handleDifferentFormatsAtOnce();
 		useBuilderPattern();
 		multiplePatternsDifferSlightly();
+		formatterForSpecificLocale();
+		dynamicDateTimePatternFormatter();
 	}
 
 	/**
@@ -75,6 +81,39 @@ public class FormattingDateTime {
 		localDate = LocalDate.parse("2018-09-23", formatter);
 		log.info("With common part: Local data from 2018-09-23 : {}", localDate);
 		localDate = LocalDate.parse("2018-Sep-23", formatter);
-		log.info("With common part: Local data from 2018-Sep-23 : {}", localDate);
+		log.info("With common part: Local data from 2018-Sep-23 : {}", localDate + "\n");
+	}
+
+	private void formatterForSpecificLocale() {
+		// first 5 locales available
+		log.info("Show first 5 Locales: ");
+		Arrays.stream(Locale.getAvailableLocales()).limit(5).forEach(System.out::println);
+
+		// ISO_LOCAL_DATE: 2011-12-03 ISO_LOCAL_TIME: 10:15:30
+		LocalDateTime date = LocalDateTime.parse("2018-02-15T13:45", DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+		log.info("ISO_LOCAL_DATE_TIME Format: {}", date + "\n");
+
+	}
+
+	private void dynamicDateTimePatternFormatter() {
+		DateTimeFormatter formatter = new DateTimeFormatterBuilder()
+				.appendOptional(DateTimeFormatter.ISO_LOCAL_DATE)
+				.optionalStart().appendLiteral("T").optionalEnd()
+				.appendOptional(DateTimeFormatter.ISO_LOCAL_TIME)
+				.toFormatter();
+
+		// results in 2018-03-16
+		LocalDate date = LocalDate.parse("2018-03-16T06:30", formatter);
+		log.info("Dynamic pattern date: 2018-03-16T06:30 => {}", date);
+		date = LocalDate.parse("2018-03-16", formatter);
+		log.info("Dynamic pattern date: 2018-03-16T => {}", date);
+
+		LocalTime time = LocalTime.parse("2018-03-16T06:30", formatter);
+		log.info("Dynamic pattern time: 2018-03-16T06:30 => {}", time);
+		time = LocalTime.parse("06:30", formatter);
+		log.info("Dynamic pattern time: 06:30 => {}", time);
+		LocalDateTime localDateTime = LocalDateTime.parse("2018-03-16T06:30", formatter);
+		log.info("Dynamic pattern date/time: 2018-03-16T06:30 => {}", localDateTime);
+
 	}
 }
