@@ -10,8 +10,8 @@ import spock.lang.Unroll
  * Created by Uwe Sauerbrei on 22.04.2018
  */
 @Title('Unit test for JsonIgnoreProperties annotation')
-@Subject(IgnorePropertiesDemoBean)
-class IgnorePropertiesDemoBeanTest extends Specification {
+@Subject(JsonIgnorePropertiesDemoBean)
+class JsonIgnorePropertiesDemoBeanTest extends Specification {
 
     private ObjectMapper objectMapper
 
@@ -25,8 +25,8 @@ class IgnorePropertiesDemoBeanTest extends Specification {
 
     @Unroll('Test serializing with JsonIgnoreProperties annotation')
     def "testSerializingWithJsonIgnoreProperties"() {
-        when: "Class IgnorePropertiesDemoBean"
-        String jsonString = objectMapper.writeValueAsString(new IgnorePropertiesDemoBean())
+        when: "Class JsonIgnorePropertiesDemoBean"
+        String jsonString = objectMapper.writeValueAsString(new JsonIgnorePropertiesDemoBean())
         then: "Attribut personId is not serialized"
         jsonString.contains("James Clark")
         !jsonString.contains("userId")
@@ -37,7 +37,7 @@ class IgnorePropertiesDemoBeanTest extends Specification {
         given: "A json input string"
         String jsonString = '{"userId": 231, "name": "Mary Parker", "gender":"male"}'
         when: "Json is deserialized to class"
-        IgnorePropertiesDemoBean bean = objectMapper.readValue(jsonString, IgnorePropertiesDemoBean.class)
+        JsonIgnorePropertiesDemoBean bean = objectMapper.readValue(jsonString, JsonIgnorePropertiesDemoBean.class)
         then: "Ignored attributes have not been deserialized"
         bean.getName() == "Mary Parker"
         bean.getUserId() != 231L

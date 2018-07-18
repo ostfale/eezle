@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
  * Jackson ignores the field both JSON serialization and deserialization.
  * Created by Uwe Sauerbrei on 22.04.2018
  */
-public class IgnoreDemoBean {
+public class JsonIgnoreDemoBean {
 
     @JsonIgnore
     private long personId = 0;
@@ -16,7 +16,7 @@ public class IgnoreDemoBean {
 
     @Override
     public String toString() {
-        return "IgnoreDemoBean{" +
+        return "JsonIgnoreDemoBean{" +
                 "personId=" + personId +
                 ", name='" + name + '\'' +
                 '}';

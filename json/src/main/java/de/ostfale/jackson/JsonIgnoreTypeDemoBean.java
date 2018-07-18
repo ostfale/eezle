@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreType;
  * It marks all the properties of the class to be ignored while generating JSON and reading JSON.
  * Created by Uwe Sauerbrei on 22.04.2018
  */
-public class IgnoreTypeDemoBean {
+public class JsonIgnoreTypeDemoBean {
 
     @JsonIgnoreType
     public static class Address {
@@ -33,7 +33,7 @@ public class IgnoreTypeDemoBean {
 
     @Override
     public String toString() {
-        return "IgnoreTypeDemoBean{" +
+        return "JsonIgnoreTypeDemoBean{" +
                 "personId=" + personId +
                 ", name='" + name + '\'' +
                 ", address=" + address +

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  * Created by Uwe Sauerbrei on 22.04.2018
  */
 @JsonIgnoreProperties({"userId", "gender"})
-public class IgnorePropertiesDemoBean {
+public class JsonIgnorePropertiesDemoBean {
 
     private long userId = 0;
     private String name = "James Clark";
@@ -17,7 +17,7 @@ public class IgnorePropertiesDemoBean {
 
     @Override
     public String toString() {
-        return "IgnorePropertiesDemoBean{" +
+        return "JsonIgnorePropertiesDemoBean{" +
                 "userId=" + userId +
                 ", name='" + name + '\'' +
                 ", gender='" + gender + '\'' +
