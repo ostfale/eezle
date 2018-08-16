@@ -1,4 +1,4 @@
-package de.ostfale.xmlunit.basic;
+package de.ostfale.xmlunit.differences;
 
 import org.junit.Test;
 import org.slf4j.Logger;
@@ -25,15 +25,15 @@ import static org.hamcrest.number.OrderingComparison.greaterThan;
 public class DetailedDifferenceTest {
 
 	private static final Logger logger = LoggerFactory.getLogger(DetailedDifferenceTest.class);
+	private static final String CONTROL_XML = "<struct><int>3</int><boolean>false</boolean></struct>";
+	private static final String TEST_XML = "<struct><boolean>false</boolean><int>3</int></struct>";
 
 	/**
 	 * To get all the differences between two pieces of XML we use an instance of the Diff class like so
 	 */
 	@Test
 	public void given2XMLS_whenGeneratesDifferences_thenCorrect() {
-		String controlXml = "<struct><int>3</int><boolean>false</boolean></struct>";
-		String testXml = "<struct><boolean>false</boolean><int>3</int></struct>";
-		Diff myDiff = DiffBuilder.compare(controlXml).withTest(testXml).build();
+		Diff myDiff = DiffBuilder.compare(CONTROL_XML).withTest(TEST_XML).build();
 
 		Iterator<Difference> differenceIterator = myDiff.getDifferences().iterator();
 		int size = 0;
@@ -50,12 +50,9 @@ public class DetailedDifferenceTest {
 	 */
 	@Test
 	public void given2XMLS_whenGeneratesOneDifference_thenCorrect() {
-		String myControlXML = "<struct><int>3</int><boolean>false</boolean></struct>";
-		String myTestXML = "<struct><boolean>false</boolean><int>3</int></struct>";
-
 		Diff myDiff = DiffBuilder
-				.compare(myControlXML)
-				.withTest(myTestXML)
+				.compare(CONTROL_XML)
+				.withTest(TEST_XML)
 				.withComparisonController(ComparisonControllers.StopWhenDifferent)
 				.build();
 

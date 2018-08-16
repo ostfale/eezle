@@ -7,4 +7,6 @@ package de.ostfale.xmlunit.basic;
  * @author : usauerbrei
  */
 public class BasicExample {
+
+	// all examples in test
 }
