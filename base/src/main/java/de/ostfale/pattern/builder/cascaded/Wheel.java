@@ -68,6 +68,13 @@ public class Wheel {
 		private int type;
 		private int colour;
 
+		private WheelListBuilder wheelListBuilder;
+
+		public WheelListBuilder addWheelToList(){
+			this.wheelListBuilder.addWheel(this.build());
+			return this.wheelListBuilder;
+		}
+
 		private Builder() {
 		}
 
@@ -90,5 +97,8 @@ public class Wheel {
 			return new Wheel(this);
 		}
 
+		public void withWheelListBuilder(WheelListBuilder wheelListBuilder) {
+			this.wheelListBuilder = wheelListBuilder;
+		}
 	}
 }
