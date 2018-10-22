@@ -6,7 +6,7 @@ package de.ostfale.pattern.builder.cascaded;
  *
  * @author : usauerbrei
  */
-public class Engine {
+	public class Engine {
 
 	private int power;
 	private int type;
