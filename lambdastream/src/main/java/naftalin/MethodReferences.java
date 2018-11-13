@@ -1,5 +1,7 @@
 package naftalin;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -9,6 +11,7 @@ import java.util.Comparator;
  *
  * @author : usauerbrei
  */
+@Slf4j
 public class MethodReferences {
 
 	private static Integer[] integerArray = {1, 2, 3, -4, -5, 6, 7};
@@ -32,7 +35,7 @@ public class MethodReferences {
 
 	private static void printArray(Integer[] anArray) {
 		for (int element : anArray) {
-			System.out.println(element);
+			log.info("Element {}", element);
 		}
 	}
 
