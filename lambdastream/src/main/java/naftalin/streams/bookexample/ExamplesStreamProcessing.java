@@ -2,12 +2,13 @@ package naftalin.streams.bookexample;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.time.Year;
+import java.util.*;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.toMap;
+import static java.util.stream.Collectors.toSet;
 
 /**
  * Examples of stream processing using book library data
@@ -50,7 +51,44 @@ public class ExamplesStreamProcessing {
 		Optional<Book> oldestBook = library.stream().min(Comparator.comparing(book -> book.getPubDate()));
 		log.info("Oldest book: {}", oldestBook.get());
 
-		Set<String> titles = library.stream().map(Book::getTitle).collect(Collectors.toSet());
+		Set<String> titles = library.stream().map(Book::getTitle).collect(toSet());
+
+		intSummaryStatisticsExample();
+		findOldestBookInLibrary();
+		collectTitleOfBooksIntoSet();
+		mapBookTitleToPublicationDate();
+		mappingWithDuplicateKeysAllowed();
+	}
+
+	private static void mappingWithDuplicateKeysAllowed() {
+		Map<String, Year> titleToPubdate = library.stream()
+				                                   .collect(toMap(Book::getTitle, Book::getPubDate, (x, y) -> x.isAfter(y) ? x : y));
+		log.info("Map with merger function: " + titleToPubdate.toString());
+	}
+
+	private static void mapBookTitleToPublicationDate() {
+		Map<String, Year> titleToPubDate = library.stream()
+				                                   .collect(toMap(Book::getTitle, Book::getPubDate));
+		log.info("Mapped title to publication date: " + titleToPubDate.toString());
+	}
+
+	private static void collectTitleOfBooksIntoSet() {
+		Set<String> titles = library.stream().map(Book::getTitle).collect(toSet());
+		log.info("All book titles: {}", titles.toString());
+	}
+
+	private static void findOldestBookInLibrary() {
+		Optional<Book> oldestBook = library.stream()
+				                            .min(Comparator.comparing(Book::getPubDate));
+		log.info("Oldest book in library: {}", oldestBook.get().getTitle());
+	}
+
+	private static void intSummaryStatisticsExample() {
+
+		IntSummaryStatistics intSummaryStatistics = library.stream()
+				                                            .mapToInt(b -> IntStream.of(b.getPageCount()).sum())
+				                                            .summaryStatistics();
+		log.info("Pagecount: {} :: Min: {} :: Max: {}", intSummaryStatistics.getCount(), intSummaryStatistics.getMin(), intSummaryStatistics.getMax());
 
 	}
 
