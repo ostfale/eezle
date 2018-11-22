@@ -27,6 +27,8 @@ public class CollectorsExample {
 	}
 
 	private static void doIt() {
+		usingFinisherForFirstBookTitleChar();
+		immutableBookList();
 		chainingMostPopularTopic();
 		mapConcatenatedTitlesByTopic();
 		partitioningByFictionOrNonFiction();
@@ -40,6 +42,20 @@ public class CollectorsExample {
 		toCollectionExamples();
 		toMapFunction();
 		joiningExamples();
+	}
+
+	private static void usingFinisherForFirstBookTitleChar() {
+		Map<Character, String> firstCharOfBookJoined = library.stream()
+				                                               .map(Book::getTitle)
+				                                               .collect(groupingBy(t -> t.charAt(0), joining(";")));
+		log.info("Show first Char of Book title: " + firstCharOfBookJoined);
+	}
+
+	private static void immutableBookList() {
+		List<String> titles = library.stream()
+				                      .map(Book::getTitle)
+				                      .collect(collectingAndThen(toList(), Collections::unmodifiableList));
+		log.info("Book titles in unmodifiables list: " + titles);
 	}
 
 	private static void chainingMostPopularTopic() {
